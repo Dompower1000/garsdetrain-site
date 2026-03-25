@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casquette 112</title>
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="logo">
+        <img src="../../images/logo/ogdt-logo.png" alt="Logo" />
+      </a>
+
+      <nav class="main-nav">
+        <a href="../../index.html" class="nav-link">Accueil</a>
+        <a href="../../pages/casquettes.html" class="nav-link active">Casquettes</a>
+        <a href="../../pages/tuques.html" class="nav-link">Tuques</a>
+        <a href="../../pages/chandails.html" class="nav-link">Chandails</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="product-page">
+        <!-- Galerie -->
+        <div class="product-gallery">
+          <div class="product-main-image">
+            <img
+              id="mainProductImage"
+              src="../../images/produits/casquettes/112/noir-face.jpg"
+              alt="Casquette 112"
+            />
+          </div>
+
+          <div class="product-thumbnails">
+            <button class="thumb active">
+              <img id="thumb1" src="../../images/produits/casquettes/112/noir-face.jpg" alt="Vue face" />
+            </button>
+            <button class="thumb">
+              <img id="thumb2" src="../../images/produits/casquettes/112/noir-cote.jpg" alt="Vue côté" />
+            </button>
+            <button class="thumb">
+              <img id="thumb3" src="../../images/produits/casquettes/112/noir-dos.jpg" alt="Vue dos" />
+            </button>
+          </div>
+        </div>
+
+        <!-- Infos -->
+        <div class="product-details">
+          <p class="product-type">Casquette</p>
+          <h1 class="product-title">Casquette 112</h1>
+          <p class="product-price large">35.00 CAD</p>
+
+          <div class="option-group">
+            <p class="option-label">Couleur</p>
+            <div class="pill-options" id="colorOptions">
+              <button class="pill active" data-color="noir">Noir</button>
+              <button class="pill" data-color="marine">Marine</button>
+              <button class="pill" data-color="charbonblanc">Charbon/Blanc</button>
+              <button class="pill" data-color="charbonnoir">Charbon/Noir</button>
+              <button class="pill" data-color="charbonrouge">Charbon/Rouge</button>
+              <button class="pill" data-color="charbonroyal">Charbon/Royal</button>
+              <button class="pill" data-color="grisbleu">Gris/Bleu</button>
+              <button class="pill" data-color="griscendreblanc">Gris cendré/Blanc</button>
+              <button class="pill" data-color="griscendremarine">Gris cendré/Marine</button>
+              <button class="pill" data-color="griscendrenoir">Gris cendré/Noir</button>
+              <button class="pill" data-color="griscendreroyal">Gris cendré/Royal</button>
+              <button class="pill" data-color="grischarbonnoir">Gris Charbon/Noir</button>
+              <button class="pill" data-color="grisnoir">Gris/Noir</button>
+              <button class="pill" data-color="marineblanc">Marine/Blanc</button>
+              <button class="pill" data-color="marineblancgris">Marine/Blanc/Gris</button>
+              <button class="pill" data-color="marronblanc">Marron/Blanc</button>
+              <button class="pill" data-color="noirblanc">Noir/Blanc</button>
+              <button class="pill" data-color="noircharcoal">Noir/Charcoal</button>
+              <button class="pill" data-color="rougeblanc">Rouge/Blanc</button>
+              <button class="pill" data-color="rougenoir">Rouge/Noir</button>
+              <button class="pill" data-color="royalblanc">Royal/Blanc</button>
+              <button class="pill" data-color="royalblancgris">Royal/Blanc/Gris</button>
+
+            </div>
+          </div>
+
+          <div class="option-group">
+            <p class="option-label">Taille</p>
+            <div class="pill-options">
+              <button class="pill active">Ajustable</button>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <p class="option-label">Quantité</p>
+            <div class="quantity-box">
+              <button type="button" id="qtyMinus">−</button>
+              <input type="number" id="qtyInput" value="1" min="1" />
+              <button type="button" id="qtyPlus">+</button>
+            </div>
+          </div>
+
+          <div class="product-actions">
+            <button class="btn btn-primary btn-full">Ajouter à la commande</button>
+          </div>
+
+          <div class="product-description">
+            <p>Casquette modèle 112, ajustable, avec logo brodé.</p>
+            <p>Disponible en plusieurs couleurs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const productImages = {
+      noir: [
+        "../../images/produits/casquettes/112/noir-face.png",
+        "../../images/produits/casquettes/112/noir-cote.jpg",
+        "../../images/produits/casquettes/112/noir-dos.jpg"
+      ],
+      marine: [
+        "../../images/produits/casquettes/112/marine-face.png",
+        "../../images/produits/casquettes/112/marine-cote.jpg",
+        "../../images/produits/casquettes/112/marine-dos.jpg"
+      ],
+	charbonblanc: [
+        "../../images/produits/casquettes/112/charbonblanc-face.png",
+        "../../images/produits/casquettes/112/charbonblanc-cote.jpg",
+        "../../images/produits/casquettes/112/charbonblanc-dos.jpg"
+      ],
+	charbonnoir: [
+        "../../images/produits/casquettes/112/charbonnoir-face.png",
+        "../../images/produits/casquettes/112/charbonnoir-cote.jpg",
+        "../../images/produits/casquettes/112/charbonnoir-dos.jpg"
+      ],
+	charbonrouge: [
+        "../../images/produits/casquettes/112/charbonrouge-face.png",
+        "../../images/produits/casquettes/112/charbonrouge-cote.jpg",
+        "../../images/produits/casquettes/112/charbonrouge-dos.jpg"
+      ],
+	charbonroyal: [
+        "../../images/produits/casquettes/112/charbonroyal-face.png",
+        "../../images/produits/casquettes/112/charbonroyal-cote.jpg",
+        "../../images/produits/casquettes/112/charbonroyal-dos.jpg"
+      ],
+	grisbleu: [
+        "../../images/produits/casquettes/112/grisbleu-face.jpg",
+        "../../images/produits/casquettes/112/grisbleu-cote.jpg",
+        "../../images/produits/casquettes/112/grisbleu-dos.jpg"
+      ],
+	griscendreblanc: [
+        "../../images/produits/casquettes/112/griscendreblanc-face.png",
+        "../../images/produits/casquettes/112/griscendreblanc-cote.jpg",
+        "../../images/produits/casquettes/112/griscendreblanc-dos.jpg"
+      ],
+	griscendremarine: [
+        "../../images/produits/casquettes/112/griscendremarine-face.png",
+        "../../images/produits/casquettes/112/griscendremarine-cote.jpg",
+        "../../images/produits/casquettes/112/griscendremarine-dos.jpg"
+      ],
+	griscendrenoir: [
+        "../../images/produits/casquettes/112/griscendrenoir-face.png",
+        "../../images/produits/casquettes/112/griscendrenoir-cote.jpg",
+        "../../images/produits/casquettes/112/griscendrenoir-dos.jpg"
+      ],
+	griscendreroyal: [
+        "../../images/produits/casquettes/112/griscendreroyal-face.png",
+        "../../images/produits/casquettes/112/griscendreroyal-cote.jpg",
+        "../../images/produits/casquettes/112/griscendreroyal-dos.jpg"
+      ],
+	grischarbonnoir: [
+        "../../images/produits/casquettes/112/grischarbonnoir-face.png",
+        "../../images/produits/casquettes/112/grischarbonnoir-cote.jpg",
+        "../../images/produits/casquettes/112/grischarbonnoir-dos.jpg"
+      ],
+	grisnoir: [
+        "../../images/produits/casquettes/112/grisnoir-face.jpg",
+        "../../images/produits/casquettes/112/grisnoir-cote.jpg",
+        "../../images/produits/casquettes/112/grisnoir-dos.jpg"
+      ],
+	marineblanc: [
+        "../../images/produits/casquettes/112/marineblanc-face.png",
+        "../../images/produits/casquettes/112/marineblanc-cote.jpg",
+        "../../images/produits/casquettes/112/marineblanc-dos.jpg"
+      ],
+	marineblancgris: [
+        "../../images/produits/casquettes/112/marineblancgris-face.png",
+        "../../images/produits/casquettes/112/marineblancgris-cote.jpg",
+        "../../images/produits/casquettes/112/marineblancgris-dos.jpg"
+      ],
+	marronblanc: [
+        "../../images/produits/casquettes/112/marronblanc-face.png",
+        "../../images/produits/casquettes/112/marronblanc-cote.jpg",
+        "../../images/produits/casquettes/112/marronblanc-dos.jpg"
+      ],
+	noirblanc: [
+        "../../images/produits/casquettes/112/noirblanc-face.png",
+        "../../images/produits/casquettes/112/noirblanc-cote.jpg",
+        "../../images/produits/casquettes/112/noirblanc-dos.jpg"
+      ],
+	noircharcoal: [
+        "../../images/produits/casquettes/112/noircharcoal-face.png",
+        "../../images/produits/casquettes/112/noircharcoal-cote.jpg",
+        "../../images/produits/casquettes/112/noircharcoal-dos.jpg"
+      ],
+	rougeblanc: [
+        "../../images/produits/casquettes/112/rougeblanc-face.png",
+        "../../images/produits/casquettes/112/rougeblanc-cote.jpg",
+        "../../images/produits/casquettes/112/rougeblanc-dos.jpg"
+      ],
+	rougenoir: [
+        "../../images/produits/casquettes/112/rougenoir-face.png",
+        "../../images/produits/casquettes/112/rougenoir-cote.jpg",
+        "../../images/produits/casquettes/112/rougenoir-dos.jpg"
+      ],
+	royalblanc: [
+        "../../images/produits/casquettes/112/royalblanc-face.png",
+        "../../images/produits/casquettes/112/royalblanc-cote.jpg",
+        "../../images/produits/casquettes/112/royalblanc-dos.jpg"
+      ],
+	royalblancgris: [
+        "../../images/produits/casquettes/112/royalblancgris-face.png",
+        "../../images/produits/casquettes/112/royalblancgris-cote.jpg",
+        "../../images/produits/casquettes/112/royalblancgris-dos.jpg"
+      ],
+
+    };
+
+    const mainImage = document.getElementById("mainProductImage");
+    const thumb1 = document.getElementById("thumb1");
+    const thumb2 = document.getElementById("thumb2");
+    const thumb3 = document.getElementById("thumb3");
+    const colorButtons = document.querySelectorAll("#colorOptions .pill");
+    const thumbButtons = document.querySelectorAll(".thumb");
+
+    let currentColor = "noir";
+    let currentImages = productImages[currentColor];
+
+    function updateGallery(color) {
+      currentColor = color;
+      currentImages = productImages[color];
+
+      mainImage.src = currentImages[0];
+      thumb1.src = currentImages[0];
+      thumb2.src = currentImages[1];
+      thumb3.src = currentImages[2];
+
+      thumbButtons.forEach((btn) => btn.classList.remove("active"));
+      thumbButtons[0].classList.add("active");
+    }
+
+    colorButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        colorButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const color = button.dataset.color;
+        updateGallery(color);
+      });
+    });
+
+    thumbButtons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        mainImage.src = currentImages[index];
+        thumbButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+      });
+    });
+
+    const qtyInput = document.getElementById("qtyInput");
+    const qtyMinus = document.getElementById("qtyMinus");
+    const qtyPlus = document.getElementById("qtyPlus");
+
+    qtyMinus.addEventListener("click", () => {
+      let value = parseInt(qtyInput.value, 10) || 1;
+      if (value > 1) qtyInput.value = value - 1;
+    });
+
+    qtyPlus.addEventListener("click", () => {
+      let value = parseInt(qtyInput.value, 10) || 1;
+      qtyInput.value = value + 1;
+    });
+  </script>
+</body>
+</html>
