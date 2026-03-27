@@ -1,21 +1,95 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Test GitHub Pages</title>
-  <style>
-    body {
-      margin: 0;
-      background: yellow;
-      color: black;
-      font-family: Arial, sans-serif;
-      padding: 40px;
-      font-size: 32px;
+
+      countElement.textContent = cart.length;
+
+      if (cart.length === 0) {
+        cartDisplay.textContent = "Panier vide.";
+        cartTotal.textContent = "0$";
+        return;
+      }
+
+      cartDisplay.innerHTML = cart.map((item) => {
+        const colorText = item.color ? ` | Couleur : ${getColorLabel(item.color)}` : "";
+        return `
+          <div class="cart-item">
+            <strong>${item.name}</strong><br>
+            Grandeur : ${capitalizeValue(item.size)}${colorText} | Qté : ${item.qty} | Sous-total : ${formatMoney(item.subtotal)}
+          </div>
+        `;
+      }).join("");
+
+      const total = cart.reduce((sum, item) => sum + item.subtotal, 0);
+      cartTotal.textContent = formatMoney(total);
     }
-  </style>
-</head>
-<body>
-  GITHUB PAGES FONCTIONNE
+
+    function buildOrderSummary() {
+      const nom = document.getElementById("nom").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const tel = document.getElementById("tel").value.trim();
+      const notes = document.getElementById("notes").value.trim();
+
+      let message = `Commande de ${nom}\n`;
+      if (email) message += `Email: ${email}\n`;
+      if (tel) message += `Téléphone: ${tel}\n`;
+      message += `\nItems:\n`;
+
+      cart.forEach((item, index) => {
+        const colorText = item.color ? ` | Couleur: ${getColorLabel(item.color)}` : "";
+        message += `${index + 1}. ${item.name} (${item.code}) | Grandeur: ${capitalizeValue(item.size)}${colorText} | Qté: ${item.qty} | Sous-total: ${formatMoney(item.subtotal)}\n`;
+      });
+
+      const total = cart.reduce((sum, item) => sum + item.subtotal, 0);
+      message += `\nTotal: ${formatMoney(total)}\n`;
+      message += `Paiement Interac à: dominic.cyr@outlook.com\n`;
+      if (notes) message += `Notes: ${notes}\n`;
+
+      return message;
+    }
+
+    function submitOrder() {
+      const nom = document.getElementById("nom").value.trim();
+
+      if (!nom) {
+        alert("Nom requis.");
+        return;
+      }
+
+      if (cart.length === 0) {
+        alert("Le panier est vide.");
+        return;
+      }
+
+      alert(buildOrderSummary());
+    }
+
+    async function copyOrder() {
+      const nom = document.getElementById("nom").value.trim();
+
+      if (!nom) {
+        alert("Entre au moins ton nom avant de copier le résumé.");
+        return;
+      }
+
+      if (cart.length === 0) {
+        alert("Le panier est vide.");
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(buildOrderSummary());
+        alert("Résumé copié dans le presse-papiers.");
+      } catch (error) {
+        alert("Impossible de copier automatiquement. Tu peux envoyer la commande normalement.");
+      }
+    }
+
+    function clearCart() {
+      cart.length = 0;
+      renderCart();
+    }
+
+    renderProducts();
+    renderCart();
+  </script>
 </body>
 </html>
